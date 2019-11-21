@@ -79,10 +79,10 @@
             class="bg-blue-500 text-white font-bold py-2 px-4 rounded opacity-50 cursor-not-allowed"
           >Sign In</button>
 
-          <!-- <a
-          class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800"
-          href="#"
-          >Forgot Password?</a>-->
+          <a
+          class="inline-block align-baseline text-sm text-blue-500 hover:text-blue-800 cursor-pointer"
+          @click="goSignin"
+          >Register</a>
         </div>
       </form>
     </div>
@@ -193,6 +193,11 @@ export default {
     goHome() {
       this.$router.push({
         name: "Home"
+      });
+    },
+    goSignin() {
+      this.$router.push({
+        name: "SignIn"
       });
     }
   }

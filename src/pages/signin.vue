@@ -1,11 +1,10 @@
 <template>
-  <div class="img-background py-20 sm:py-20 md:py-20 lg:py-48 lg:py-48">
+  <div class="img-background py-32">
     <div class="container mx-auto px-4">
       <form
         :model="SignInForm"
         class="w-full sm:w-4/5 md:w-1/3 lg:w-1/3 xl:w-1/3 mx-auto bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
       >
-      
         <div class="mb-4">
           <label
             v-if="!usernameValidate"
@@ -28,7 +27,7 @@
             type="text"
           />
         </div>
-          <div class="mb-4">
+        <div class="mb-4">
           <label
             v-if="!emailValidate"
             class="block text-gray-700 text-sm font-bold mb-2"
@@ -83,10 +82,10 @@
             class="bg-blue-500 text-white font-bold py-2 px-4 rounded opacity-50 cursor-not-allowed"
           >Sign In</button>
 
-          <!-- <a
-          class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800"
-          href="#"
-          >Forgot Password?</a>-->
+          <a
+          class="inline-block align-baseline text-sm text-blue-500 hover:text-blue-800 cursor-pointer"
+          @click="goLogin"
+          >Login</a>
         </div>
       </form>
       <h2>{{data}}</h2>
@@ -205,6 +204,32 @@ export default {
 </script>
 
 <style scoped>
+.opacity_bg {
+  left: 0;
+  top: 0;
+  z-index: 22;
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+  opacity: 0.5;
+}
+.lds-css {
+  position: relative;
+  left: -50%;
+  top: -40%;
+}
+.loading {
+  position: absolute;
+  left: 50%;
+  top: 40%;
+}
+.img-background {
+  background-image: url("../assets/login-wallpaper.jpg");
+  background-size: 100% 100%;
+  /* background-color: #1d3f72; */
+  height: 100vh;
+}
 @keyframes lds-rolling {
   0% {
     -webkit-transform: translate(-50%, -50%) rotate(0deg);
